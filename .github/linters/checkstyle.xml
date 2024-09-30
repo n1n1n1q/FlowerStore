@@ -5,8 +5,6 @@
 
 
 <module name="Checker">
-
-
     <!-- Checks that property files contain the same keys. -->
     <module name="Translation"/>
 
@@ -15,6 +13,7 @@
     <module name="FileTabCharacter">
         <property name="eachLine" value="false"/>
     </module>
+
 
 
     <!-- Checks that no file is more than 1500 lines long. -->
