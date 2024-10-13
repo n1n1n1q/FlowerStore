@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter @Getter @NoArgsConstructor @AllArgsConstructor
+@Setter @Getter @AllArgsConstructor @NoArgsConstructor
 public class FlowerPack {
     private Flower flowers;
     private int numFlowers = 0;

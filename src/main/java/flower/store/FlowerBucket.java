@@ -18,7 +18,4 @@ public class FlowerBucket {
         }
         return sum;
     }
-    public void add(FlowerPack flower) {
-        flowers.add(new FlowerPack(flower));
-    }
 }
