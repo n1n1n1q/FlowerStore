@@ -54,6 +54,9 @@ public class FlowerTest {
         FlowerSpec spec = new FlowerSpec(FlowerType.CHAMOMILE, FlowerColor.RED);
         ArrayList<Flower> flowersXd = store.search(spec);
         Assertions.assertEquals(flowersXd.size(), 1);
+        FlowerSpec specTwo = new FlowerSpec(FlowerType.ROSE, FlowerColor.RED);
+        ArrayList<Flower> flowersXdTwo = store.search(specTwo);
+        Assertions.assertEquals(flowersXdTwo.size(), 0);
     }
 
     @Test
@@ -62,28 +65,7 @@ public class FlowerTest {
         for (int i = 0; i < NUM; i++) {
             store.addFlower(new Flower());
         }
-        Assertions.assertEquals(store.getFlowers().size(), 5);
-    }
-
-    @Test
-    public void testSearch() {
-        Flower[] flowers = new Flower[NUMTWO];
-        for (int i = 0; i < flowers.length; i++) {
-            flowers[i] = new Flower();
-        }
-        flowers[0].setColor(FlowerColor.RED);
-        flowers[0].setType(FlowerType.CHAMOMILE);
-        flowers[1].setColor(FlowerColor.GREEN);
-        flowers[1].setType(FlowerType.CHAMOMILE);
-        flowers[2].setColor(FlowerColor.BLUE);
-        flowers[2].setType(FlowerType.CHAMOMILE);
-        Store store = new Store();
-        for (int i = 0; i < flowers.length; i++) {
-            store.addFlower(flowers[i]);
-        }
-        FlowerSpec spec = new FlowerSpec(FlowerType.ROSE, FlowerColor.RED);
-        ArrayList<Flower> flowersXd = store.search(spec);
-        Assertions.assertEquals(flowersXd.size(), 0);
+        Assertions.assertEquals(store.getFlowers().size(), NUM);
     }
 
     @Test
