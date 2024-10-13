@@ -5,15 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter @Getter
+@Setter @Getter @NoArgsConstructor @AllArgsConstructor
 public class FlowerPack {
     private Flower flowers;
     private int numFlowers = 0;
-    public FlowerPack() {}
-    public FlowerPack(Flower flower, int amount) {
-        flowers = new Flower(flower);
-        numFlowers = amount;
-    }
     public FlowerPack(FlowerPack anotherPack) {
         flowers = new Flower(anotherPack.flowers);
         numFlowers = anotherPack.numFlowers;

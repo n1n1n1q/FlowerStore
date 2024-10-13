@@ -11,14 +11,14 @@ public class FlowerBucket {
     public FlowerBucket(ArrayList<FlowerPack> flowers) {
         this.flowers = flowers;
     }
-    public double getPrice(){
+    public double getPrice() {
         double sum = 0;
         for (FlowerPack flower : flowers) {
             sum += flower.getPrice();
         }
         return sum;
     }
-    public void add(FlowerPack flower){
+    public void add(FlowerPack flower) {
         flowers.add(new FlowerPack(flower));
     }
 }

@@ -10,21 +10,20 @@ public class Flower {
     private int sepalLength;
     private double price;
     private FlowerType type;
-
-    public String getColor(){
-        return color.toString();
+    public Flower() {
+        sepalLength = 0;
+        price = 0;
     }
-    public Flower(Flower flower){
+    public Flower(Flower flower) {
         color = flower.color;
         sepalLength = flower.sepalLength;
         price = flower.price;
         type = flower.type;
     }
-    public Flower(){
-        sepalLength = 0;
-        price = 0;
+    public String getColor(){
+        return color.toString();
     }
-    public FlowerSpec getSpec(){
+    public FlowerSpec getSpec() {
         return new FlowerSpec(type, color);
     }
 }

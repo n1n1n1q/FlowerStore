@@ -8,7 +8,7 @@ public class Store {
     public Store() {
         flowers = new ArrayList<>();
     }
-    public ArrayList<Flower> search(FlowerSpec spec){
+    public ArrayList<Flower> search(FlowerSpec spec) {
         ArrayList<Flower> res = new ArrayList<>();
         for (Flower flower : flowers) {
             if (flower.getSpec().matches(spec)) {
