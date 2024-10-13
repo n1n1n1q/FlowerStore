@@ -13,6 +13,7 @@ public class FlowerTest {
     private static final int MAX_PRICE = 100;
     private static final int PRICE = 40;
     private static final int NUM = 5;
+    private static final int NUMTWO = 3;
     private Flower flower;
 
     @BeforeEach
@@ -36,7 +37,7 @@ public class FlowerTest {
 
     @Test
     public void testStore() {
-        Flower[] flowers = new Flower[3];
+        Flower[] flowers = new Flower[NUMTWO];
         for (int i = 0; i < flowers.length; i++) {
             flowers[i] = new Flower();
         }
@@ -51,14 +52,14 @@ public class FlowerTest {
             store.addFlower(flowers[i]);
         }
         FlowerSpec spec = new FlowerSpec(FlowerType.CHAMOMILE, FlowerColor.RED);
-        ArrayList<Flower> flowers1 = store.search(spec);
-        Assertions.assertEquals(flowers1.size(), 1);
+        ArrayList<Flower> flowersXd = store.search(spec);
+        Assertions.assertEquals(flowersXd.size(), 1);
     }
 
     @Test
     public void testAdd() {
         Store store = new Store();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < NUM; i++) {
             store.addFlower(new Flower());
         }
         Assertions.assertEquals(store.getFlowers().size(), 5);
@@ -66,7 +67,7 @@ public class FlowerTest {
 
     @Test
     public void testSearch() {
-        Flower[] flowers = new Flower[3];
+        Flower[] flowers = new Flower[NUMTWO];
         for (int i = 0; i < flowers.length; i++) {
             flowers[i] = new Flower();
         }
@@ -81,32 +82,31 @@ public class FlowerTest {
             store.addFlower(flowers[i]);
         }
         FlowerSpec spec = new FlowerSpec(FlowerType.ROSE, FlowerColor.RED);
-        ArrayList<Flower> flowers1 = store.search(spec);
-        Assertions.assertEquals(flowers1.size(), 0);
+        ArrayList<Flower> flowersXd = store.search(spec);
+        Assertions.assertEquals(flowersXd.size(), 0);
     }
 
     @Test
     public void testBucket() {
-        Flower flower1 = new Flower();
-        flower1.setType(FlowerType.ROSE);
-        flower1.setColor(FlowerColor.RED);
-        flower1.setPrice(MAX_PRICE);
-        Flower flower2 = new Flower();
-        flower2.setType(FlowerType.CHAMOMILE);
-        flower2.setColor(FlowerColor.GREEN);
-        flower2.setPrice(PRICE);
-        FlowerPack flowerPack1 = new FlowerPack(flower1, NUM);
-        FlowerPack flowerPack2 = new FlowerPack(flower2, NUM);
+        Flower flowerOne = new Flower();
+        flowerOne.setType(FlowerType.ROSE);
+        flowerOne.setColor(FlowerColor.RED);
+        flowerOne.setPrice(MAX_PRICE);
+        Flower flowerTwo = new Flower();
+        flowerTwo.setType(FlowerType.CHAMOMILE);
+        flowerTwo.setColor(FlowerColor.GREEN);
+        flowerTwo.setPrice(PRICE);
+        FlowerPack flowerPackOne = new FlowerPack(flowerOne, NUM);
+        FlowerPack flowerPackTwo = new FlowerPack(flowerTwo, NUM);
         ArrayList<FlowerPack> flowerPacks = new ArrayList<>();
-        flowerPacks.add(flowerPack1);
-        flowerPacks.add(flowerPack2);
+        flowerPacks.add(flowerPackOne);
+        flowerPacks.add(flowerPackTwo);
         FlowerBucket bucket = new FlowerBucket(flowerPacks);
         Assertions.assertEquals(bucket.getPrice(), (PRICE + MAX_PRICE) * NUM);
     }
 
     @Test
     public void testPack() {
-        Flower flower = new Flower();
         flower.setType(FlowerType.ROSE);
         flower.setColor(FlowerColor.RED);
         flower.setPrice(MAX_PRICE);
