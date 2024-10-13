@@ -20,7 +20,7 @@ public class Flower {
         price = flower.price;
         type = flower.type;
     }
-    public String getColor(){
+    public String getColor() {
         return color.toString();
     }
     public FlowerSpec getSpec() {
