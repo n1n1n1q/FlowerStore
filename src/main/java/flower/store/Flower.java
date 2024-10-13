@@ -24,4 +24,7 @@ public class Flower {
         sepalLength = 0;
         price = 0;
     }
+    public FlowerSpec getSpec(){
+        return new FlowerSpec(type, color);
+    }
 }
